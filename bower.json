@@ -1,0 +1,18 @@
+{
+  "name": "hackathon2015",
+  "version": "0.0.0",
+  "authors": [
+    "Cristofer Sanz Blasco <cristofercri@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lumx": "~0.3.24"
+  }
+}

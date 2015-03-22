@@ -1,0 +1,67 @@
+extends layout
+
+block content
+
+	include logo
+
+	div(class = "mt++",flex-container="column",ng-controller="indexController")
+
+		// Buscador
+		div(flex-container="row")
+			div(flex-item="3")
+			div(flex-item="6", class="card bgc-indigo-blue-grey-500")
+				div(class="toolbar bgc-indigo-blue-grey-500")
+					lx-search-filter(model="busqueda", placeholder="Búsqueda...")
+
+		// Elementos
+		div(flex-container="row", flex-gutter="32")
+			
+			// Tarjetas
+			div(flex-item="6", flex-container="column")
+				h1(class="fs-display-1 display-block", style="text-align: center") Resultados de búsqueda
+				perfect_scrollbar(class="scroller")
+					div(ng-show="elecciones.length != 0", class="p")
+						div(class="card mt+ bgc-white-1",flex-item, ng-repeat="sel in elecciones")
+							div(flex-container="row")
+								div(class="card__img card__img--left",style="height: 100px")
+									img(ng-src="{{sel.urlImagen}}", ng-click="mostrarInfo(sel)")
+								div(flex-item flex-container="column")
+									div(class="p+", flex-item)
+										strong.fs-headline.display-block
+											p {{sel.titulo}}
+										span.fs-subhead.tc-black-2.display-block
+											p {{sel.descripcion.substr(0,250)}} [...]
+									.card__actions.toolbar__right
+										button(class="btn btn--m btn--indigo btn--flat",lx-ripple, ng-click="mostrarInfo(sel)")
+											p Más información
+										button(class="btn btn--m btn--green btn--raised",lx-ripple, ng-click="anadir(sel)")
+											p Añadir a ruta
+
+			div(flex-item="6", flex-container="column")
+				h1(class="fs-display-1 display-block", style="text-align: center") Elementos seleccionados
+				perfect_scrollbar(class="scroller")
+					div(ng-show="seleccionados.length != 0", class="p")
+						div(class="card mt+ bgc-white-1",flex-item, ng-repeat="sel in seleccionados")
+							div(flex-container="row")
+								div(class="card__img card__img--left",style="height: 100px")
+									img(ng-src="{{sel.urlImagen}}", ng-click="mostrarInfo(sel)")
+								div(flex-item flex-container="column")
+									div(class="p+", flex-item)
+										strong.fs-headline.display-block
+											p {{sel.titulo}}
+										span.fs-subhead.tc-black-2.display-block
+											p {{sel.descripcion.substr(0,250)}} [...]
+									.card__actions.toolbar__right
+										button(class="btn btn--m btn--indigo btn--flat",lx-ripple, ng-click="mostrarInfo(sel)")
+											p Más información
+										button(class="btn btn--m btn--red btn--raised",lx-ripple, ng-click="eliminar(sel)")
+											p Eliminar de ruta
+
+		// Botón
+		div(flex-container="row", class="mt+++")
+			div(flex-item="10")
+			div(flex-item="2")
+				button(class="btn btn--xl btn--raised btn--indigo", ng-click="enviar()", lx-ripple)
+					p Calcular ruta
+
+		include dialogo

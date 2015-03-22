@@ -1,0 +1,72 @@
+.circleBase {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: #DCE0F2;
+    border: 3px solid #5C73F2;
+    display: table-cell; 
+    vertical-align: middle;
+    text-align: center;
+    font-weight:bold; 
+    background-size: 100px 100px;
+}
+
+.linea{
+    font-weight:bold; 
+    width: 100px; height: 50px; 
+    display: table-cell; 
+    vertical-align: bottom; 
+    border-bottom: 5px solid #5C73F2; 
+    text-align:center
+}
+.linea2{
+    width: 53px; 
+    height: 52px; 
+    display: table-cell; 
+    vertical-align: bottom; 
+    border-bottom: 5px solid #5C73F2; 
+    text-align:center; 
+    float:right
+}
+.linea3{
+    font-weight:bold; 
+    width: 106px; 
+    height: 50px; 
+    display: table-cell; 
+    vertical-align: bottom; 
+    border-bottom: 5px solid #5C73F2; 
+    text-align:center
+}
+.linea4{
+    width: 53px; 
+    height: 50px; 
+    display: table-cell; 
+    vertical-align: bottom; 
+    border-bottom: 5px solid #5C73F2; 
+    border-right: 5px solid #5C73F2;
+    text-align:center
+}
+.linea5{
+    width: 53px; 
+    height: 50px; 
+    display: table-cell; 
+    vertical-align: bottom; 
+    border-left: 5px solid #5C73F2; 
+    text-align:center; 
+    float:right
+}
+
+.circleBase2 {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: #DCE0F2;
+    border: 3px solid #5C73F2;
+    vertical-align: middle;
+    text-align: center;
+    font-weight:bold; 
+    box-sizing: content-box;
+    -moz-border-radius: 30px;
+    -khtml-border-radius: 30px;
+    -webkit-border-radius: 30px;
+}

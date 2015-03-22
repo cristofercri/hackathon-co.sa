@@ -1,0 +1,12 @@
+lx-dialog(class="dialog dialog--l",id="info")
+    .dialog__header
+        div(class="toolbar bgc-light-blue-500 pl++")
+            span.toolbar__label.tc-white.fs-headline
+                p {{info.titulo}}
+
+            .toolbar__right
+                button(class="btn btn--l btn--white btn--icon",lx-ripple,ng-click="cerrarDialogo()")
+                    i.mdi.mdi-close
+    
+    div(class="dialog__content", lx-scrollbar, style="max-height: 400px")
+        div(class="p++", ng-bind-html="info.cuerpo")

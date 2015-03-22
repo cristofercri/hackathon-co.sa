@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+	include logo
+
+	// Elementos
+	div(flex-container="row", flex-gutter="32", ng-controller="rutaController", ng-init="inicializar()")
+		
+		// Tarjetas
+		div(flex-item="6")
+			h1.fs-display-1.display-block Ruta generada
+			div(class="canvas-container")
+				div(id="map-canvas")
+
+		div(flex-item="6")
+			h1.fs-display-1.display-block Resumen de la ruta
+			div(id="dvSalida")
